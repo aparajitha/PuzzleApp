@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <ImageView 
+    android:id="@+id/ImageView1" 
+ android:layout_below="@+id/easy"
+    android:layout_width="160px" 
+     android:background="@drawable/troop" 
+     android:layout_height="160px"
+
+    >
+  </ImageView>
+  <TextView 
+ android:text="**Lets  arrange the scattered image**..!!****"
+ android:layout_below="@+id/ImageView1"
+ android:typeface="serif"
+ android:textStyle="bold"
+ android:textSize="20px"
+ android:textColor="#F88017" 
+ android:id="@+id/aboutText" 
+ android:layout_width="165px" 
+ android:layout_height="wrap_content">
+ </TextView>
+ <TextView
+ android:text="Level:EASY"
+ android:typeface="serif"
+ android:textStyle="bold"
+  android:id="@+id/easy"
+ android:textSize="18px"
+ android:textColor="#A1E86A"  
+ android:layout_width="165px" 
+ android:layout_height="wrap_content"
+ ></TextView>
+ <TextView
+ android:layout_marginLeft="20px"
+ android:layout_marginTop="20px"
+ android:layout_below="@+id/aboutText"
+ android:id="@+id/timertext"
+ android:typeface="serif"
+ android:text="Time:"
+ android:textStyle="bold"
+ android:textSize="20px"
+ android:textColor="#A1E86A"  
+ android:layout_width="95px" 
+ android:layout_height="50px"
+ 
+ ></TextView>
+ 
+ <TextView
+ android:layout_marginLeft="20px"
+ android:background="#fff000"
+ android:layout_below="@+id/timertext"
+ android:id="@+id/timermain"
+ android:typeface="serif"
+ android:textStyle="bold"
+ android:textSize="15px"
+ android:textColor="#000000"  
+ android:layout_width="95px" 
+ android:layout_height="35px"
+ 
+ ></TextView>
+ 
+<com.ni.letspuzzle.BlockEasy 
+android:id="@+id/draw"
+android:layout_marginLeft="15px"
+android:layout_toRightOf="@+id/ImageView1"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+
+/>
+</RelativeLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout 
+ xmlns:android="http://schemas.android.com/apk/res/android" 
+ android:id="@+id/relativeLayout1" 
+ android:layout_height="match_parent" 
+ android:layout_width="wrap_content"
+ android:background="@drawable/puzz">
+ 
+<Button 
+  android:layout_height="140px" 
+  android:layout_width="200px" 
+  android:id="@+id/Easy"
+  android:layout_marginTop="120px"
+  android:layout_marginLeft="100px" 
+  android:background="@drawable/easss">
+  </Button>
+  
+ <Button 
+ android:layout_toRightOf="@+id/easy"
+  android:layout_height="140px" 
+  android:layout_width="200px" 
+  android:id="@+id/Medium" 
+  android:layout_marginTop="5px"
+   android:layout_marginLeft="700px"
+ android:background="@drawable/mediu"
+ >
+  </Button>
+ 
+ <Button 
+ android:layout_below="@+id/easy"
+  android:layout_height="140px" 
+  android:layout_width="200px" 
+  android:id="@+id/Hard" 
+  android:layout_marginTop="270px"
+   android:layout_marginLeft="420px"
+ android:background="@drawable/hard2"
+ >
+  </Button>
+  
+  <Button 
+ android:layout_below="@+id/medium"
+  android:layout_height="140px" 
+  android:layout_width="200px" 
+  android:id="@+id/Exit" 
+  android:layout_marginTop="390px"
+   android:layout_marginLeft="850px"
+ android:background="@drawable/exit1"
+  >
+  </Button>
+  <!--<ImageView 
+  android:layout_height="wrap_content" 
+  android:id="@+id/imageView2"
+   android:background="@drawable/puzzles"
+    android:layout_width="wrap_content" 
+    android:layout_alignParentLeft="true"
+     android:layout_marginLeft="264px"
+    android:layout_marginTop="95px">
+    </ImageView>
+ --></RelativeLayout>

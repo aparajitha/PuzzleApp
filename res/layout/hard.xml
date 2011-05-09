@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <ImageView 
+    android:id="@+id/ImageView02" 
+    android:layout_width="170px" 
+     android:layout_below="@+id/level"
+     android:background="@drawable/all" 
+     android:layout_height="170px"
+       
+    >
+  </ImageView>
+  <TextView 
+ android:text="**Lets  arrange the scattered image**..!!"
+ android:layout_below="@+id/ImageView02"
+ android:typeface="serif"
+ android:textStyle="bold"
+ android:textSize="20px"
+ android:textColor="#F88017" 
+ android:id="@+id/hardtext" 
+ android:layout_width="165px" 
+ android:layout_height="wrap_content">
+ </TextView>
+ <TextView
+ android:text="Level:HARD"
+ android:typeface="serif"
+ android:textStyle="bold"
+ android:textSize="18px"
+ android:textColor="#A1E86A"  
+ android:id="@+id/level"
+ android:layout_width="165px" 
+ android:layout_height="wrap_content"
+ 
+ ></TextView>
+ <TextView
+ android:layout_marginLeft="20px"
+ android:layout_marginTop="20px"
+ android:layout_below="@+id/hardtext"
+ android:id="@+id/timerhard"
+ android:typeface="serif"
+ android:text="Time:"
+ android:textStyle="bold"
+ android:textSize="20px"
+ android:textColor="#A1E86A"  
+ android:layout_width="95px" 
+ android:layout_height="50px"
+ 
+ ></TextView>
+ <TextView
+ android:layout_marginLeft="20px"
+ android:background="#fff000"
+ android:layout_below="@+id/timerhard"
+ android:id="@+id/timertext"
+ android:typeface="serif"
+ android:textStyle="bold"
+ android:textSize="15px"
+ android:textColor="#000000"  
+ android:layout_width="95px" 
+ android:layout_height="50px"
+ 
+ ></TextView>
+<com.ni.letspuzzle.BlockHard 
+android:id="@+id/hardl"
+android:layout_toRightOf="@+id/ImageView02"
+android:layout_marginRight="40px"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+
+/>
+</RelativeLayout>

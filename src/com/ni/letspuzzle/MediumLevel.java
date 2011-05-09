@@ -1,0 +1,128 @@
+package com.ni.letspuzzle;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Window;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MediumLevel extends Activity {
+	private BlockMedium draw1 = null;
+	BlockEasy draw=null;
+	MainGame mg1=new MainGame();
+	TextView tv1;
+	int ti=0;
+	Timer myTimer1;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.medium);
+        draw1 = (BlockMedium) findViewById(R.id.medium);
+        tv1=(TextView)findViewById(R.id.timermedi);
+   /* if(draw.count==1)
+    {
+    	draw1.setUpdateRunningAfterInited(true);
+    }*/
+        myTimer1 = new Timer();
+		myTimer1.schedule(new TimerTask() {
+			@Override
+			public void run() {
+				TimerMethod();
+			}
+
+		}, 0, 1000);
+        
+        //timerCountDown(20);
+    }
+	private void TimerMethod()
+	{
+		//This method is called directly by the timer
+		//and runs in the same thread as the timer.
+
+		//We call the method that will work with the UI
+		//through the runOnUiThread method.
+		this.runOnUiThread(Timer_Tick);
+	}
+	private Runnable Timer_Tick = new Runnable() {
+		public void run() {
+
+		//This method runs in the same thread as the UI.    	       
+
+		//Do something to the UI thread here
+			
+			tv1.setText(""+ti+++"\tSecs");
+			if(draw1.count1==1)
+			{
+				tost();
+				finish();
+				long diffInSeconds = (draw1.endTime2-mg1.startTime2 ) / 1000;
+
+			    long diff[] = new long[] { 0, 0, 0, 0 };
+			    /* sec */diff[3] = (diffInSeconds >= 60 ? diffInSeconds % 60 : diffInSeconds);
+			    /* min */diff[2] = (diffInSeconds = (diffInSeconds / 60)) >= 60 ? diffInSeconds % 60 : diffInSeconds;
+			    /* hours */diff[1] = (diffInSeconds = (diffInSeconds / 60)) >= 24 ? diffInSeconds % 24 : diffInSeconds;
+			    System.out.println(String.format(
+			            "You Have taken %d day%s, %d hour%s, %d minute%s, %d second%s to set The puzzle",
+			            diff[0],
+			            diff[0] > 1 ? "s" : "",
+			            diff[1],
+			            diff[1] > 1 ? "s" : "",
+			            diff[2],
+			            diff[2] > 1 ? "s" : "",
+			            diff[3],
+			            diff[3] > 1 ? "s" : ""));
+				myTimer1.cancel();
+				tv1.setText("win..."+ti);
+				
+
+			}
+		}
+	};
+    
+    
+    @Override
+    protected void onPause() {
+    	draw1.setUpdateRunningAfterInited(false);
+    	super.onPause();
+    }
+    
+    @Override
+    protected void onResume() {
+    	draw1.setUpdateRunningAfterInited(true);
+    	super.onResume();
+    }
+  /* protected void timerCountDown(final int secondCount)
+
+    {
+    	tv.setText("TimeLeft:"+secondCount);	
+           Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+            	
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub
+					 if(secondCount==1)
+					 {	tost();
+					 }
+					 timerCountDown(secondCount-1);
+			           
+				}
+				
+			}
+			, 1000);
+          
+           
+            }*/
+    public void tost()
+    {
+    	Toast.makeText(this, "You have taken"+ti+"Secens to set the puzzle", Toast.LENGTH_LONG).show();
+    }
+
+}
